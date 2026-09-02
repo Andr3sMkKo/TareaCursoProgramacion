@@ -17,9 +17,9 @@ print("Area de un Triangulo #2")
 while True:
     try:
         print("¿Cual es la base del triangulo? ")
-        base = int(input())
+        base = float(input())
         print("¿Cual es la altura del triangulo?")
-        altura = int(input())
+        altura = float(input())
         area = (base * altura) / 2
         print("El area del triangulo es " + str(area))
         break
