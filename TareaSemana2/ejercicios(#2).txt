@@ -1,0 +1,59 @@
+1. Calculadora simple:
+
+Crea un programa que pida al usuario dos números y un operador (+, -, *, /).  
+Realiza la operación correspondiente e imprime el resultado.
+
+2.  Área de un triángulo:
+
+Pide al usuario la base y la altura de un triángulo. 
+Calcula el área del triángulo (área = (base * altura) / 2) e imprime el resultado.
+
+3.  Conversión de temperatura:
+
+Pide al usuario una temperatura en grados Celsius. 
+Convierte la temperatura a grados Fahrenheit (Fahrenheit = (Celsius * 9/5) + 32) e imprime el resultado.
+
+4.  Número par o impar:
+
+Pide al usuario un número. 
+Determina si el número es par o impar usando el operador módulo (%) e imprime el resultado.
+
+5.  Mayor de dos números:
+
+Pide al usuario dos números. 
+Determina cuál es el mayor de los dos e imprime el resultado.
+
+6.  Año bisiesto:
+
+Pide al usuario un año. 
+Determina si el año es bisiesto. 
+Un año es bisiesto si es divisible por 4, excepto si es divisible por 100 pero no por 400.
+
+7.  Calculadora de descuento:
+
+Pide al usuario el precio de un producto y el porcentaje de descuento. 
+Calcula el precio final después del descuento e imprime el resultado.
+
+8.  Índice de masa corporal (IMC):
+
+Pide al usuario su peso (en kilogramos) y su altura (en metros). 
+Calcula su IMC (IMC = peso / (altura ** 2)) e imprime el resultado.
+
+9.  Promedio de notas:
+
+Pide al usuario tres notas. 
+Calcula el promedio de las tres notas e imprime el resultado.
+
+10.  Duración en segundos:
+
+Pide al usuario una duración en horas, minutos y segundos. 
+Calcula la duración total en segundos e imprime el resultado.
+
+Consejos:
+
+Usa variables para almacenar los valores que ingrese el usuario.
+Usa los operadores aritméticos (+, -, *, /, //, %, **) para realizar los cálculos.
+Usa los operadores de comparación (==, !=, >, <, >=, <=) para comparar valores.
+Usa la función print() para mostrar los resultados en la pantalla.
+Intenta resolver los ejercicios sin buscar la solución en internet.
+Si te quedas atascado, divide el problema en partes más pequeñas y resuélvelas una por una.
