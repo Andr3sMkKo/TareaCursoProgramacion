@@ -26,14 +26,20 @@ elif calc == "Multiplicacion":
     mult1 = int(nummulti[0])
     mult2 = int(nummulti[1])
     multiplicacion = mult1 * mult2
-    print("El resultado es:" + str(multiplicacion))
+    print("El resultado es: " + str(multiplicacion))
 
 elif calc == "Division":
-    numdivi = input(oraciones["pedir"] + oraciones["operaciones"][3]).split()
-    div1 = int(numdivi[0])
-    div2 = int(numdivi[1])
-    division = div1 / div2
-    print("El resultado es: " + str(division))
+    try:
+        numdivi = input(oraciones["pedir"] + oraciones["operaciones"][3]).split()
+        div1 = int(numdivi[0])
+        div2 = int(numdivi[1])
+        division = div1 / div2
+        print("El resultado es: " + str(division))
+    except ZeroDivisionError:
+        print("La division por 0 esta indefinida")
 
 else:
     print("No puedo hacer lo que me pides. Escribe Suma, Resta, Multiplicacion o Division")
+
+# Ver una forma de resolver el error de terminal cuando se divide por 0
+# con un bucle try: y except ZeroDivisionError as error: (LISTO!)

@@ -7,3 +7,7 @@ nota1, nota2, nota3 = input().split()
 
 promedio = (int(nota1) + int(nota2) + int(nota3))/3
 print("El promedio es " + str(promedio))
+
+# Alternativas 
+# (pedir cuantas notas primero)
+# funcion "average()"

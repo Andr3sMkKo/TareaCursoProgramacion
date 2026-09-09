@@ -12,6 +12,7 @@ area = (int(base) * int(altura)) / 2
 print("El area del triangulo es " + str(area))
 
 #Encontrar una forma de leer o diferenciar si el input es un numero o letra 
+
 print("Area de un Triangulo #2")
 
 while True:
