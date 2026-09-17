@@ -15,7 +15,7 @@ while True:
                     num_columnas.append(num)
                     print(*num_columnas)
             else:
-                print("Vuelve a iniciar el codigo")
+                print("Por favor, vuelve a iniciar el codigo")
                 break
         elif columnas < 51:
             for num in range(1,columnas+1):
@@ -24,6 +24,6 @@ while True:
             break
 
     except ValueError:
-        print("Hubo un error. El sistema no acepta letras o numeros menores a 1")
+        print("\n!!!Hubo un error. El sistema no acepta letras o numeros menores a 1!!!\n")
 
-# Mas de 1558 da error por maximo de digitos se puede cambiar pero es innecesario. 50 es el mas normal para mi resolucion de pantalla
+# Mas de 1558 da error por maximo de digitos se puede cambiar pero es innecesario. 50 es llega a verse en la pantalla completa con mi resolucion de pantalla

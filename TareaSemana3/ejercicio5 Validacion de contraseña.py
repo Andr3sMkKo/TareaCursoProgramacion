@@ -1,4 +1,5 @@
 # Validacion de contraseña
+import string
 
 print("Validacion de contraseña")
 print("Ingresa una contraseña que cumpla con los siguientes criterios:\n")
@@ -21,7 +22,7 @@ criterios = {
     "La contraseña necesita almenos 1 numero": any(caracter.isdigit() for caracter in contraseña_usuario),
 
     #Tiene almenos 1 caracter especial?
-    "La contraseña necesita almenos 1 caracter especial": any(caracter.isascii() for caracter in contraseña_usuario)
+    "La contraseña necesita almenos 1 caracter especial": any(caracter in string.punctuation for caracter in contraseña_usuario)
 }
 
 error_falta = [error for error,condicion in criterios.items() if not condicion]
@@ -29,6 +30,6 @@ error_falta = [error for error,condicion in criterios.items() if not condicion]
 if not error_falta:
     print("Perfecto! Tu contraseña cumple con todos los criterios")
 else:
-    print("No se cumplen estos requisitos:")
+    print("\nNo se cumplen estos requisitos:")
     for error in error_falta:
         print(error)

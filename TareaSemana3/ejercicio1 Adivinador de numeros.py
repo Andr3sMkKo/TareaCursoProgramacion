@@ -7,6 +7,7 @@ import random
 numero_random = random.randint(0,20)
 print("Elige un numero entre el 0 y el 20")
 numero_elegido = int
+#print(f"{numero_elegido}")
 
 while str(numero_elegido) != str(numero_random):
     try: 
