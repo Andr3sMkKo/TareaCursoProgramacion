@@ -1,0 +1,183 @@
+
+**Ejercicio: Diseña tu propia biblioteca digital**
+
+**Objetivo:**
+
+* Aplicar los conceptos básicos de bases de datos aprendidos en clase.
+* Diseñar y crear una base de datos desde cero.
+* Definir tablas y campos con tipos de datos adecuados.
+* Utilizar un motor de base de datos SQLite.
+
+**Descripción de la actividad:**
+
+Ejercicio: Diseño de Base de Datos de una Biblioteca
+
+Objetivo: 
+    • Diseñar e implementar un esquema de base de datos relacional complejo.
+    • Aplicar correctamente los tres tipos de relaciones: uno a uno (1:1), uno a muchos (1:N) y muchos a muchos (N:N).
+    • Definir claves primarias, claves foráneas y restricciones de integridad (UNIQUE, NOT NULL).
+    • Escribir consultas avanzadas que requieran múltiples JOINs para cruzar información.
+
+Descripción de la actividad:
+
+    • Diseñarás la base de datos completa para un sistema de gestión de biblioteca. 
+        A diferencia de un sistema simple, este debe registrar no solo los libros y los préstamos, 
+        sino también información detallada sobre los autores, las editoriales y los perfiles de los usuarios 
+        (separando su información de inicio de sesión de su información personal).
+    • Esquema de Tablas (Mínimo 6 tablas):
+
+
+Autores (Entidad principal)
+
+id_autor (Entero, Clave Primaria)
+nombre (Texto)
+apellido (Texto)
+nacionalidad (Texto)
+
+Editoriales (Entidad principal)
+id_editorial (Entero, Clave Primaria)
+nombre_editorial (Texto, Único)
+ciudad_sede (Texto)
+
+Libros (Implementa dos relaciones 1:N)
+id_libro (Entero, Clave Primaria)
+titulo (Texto)
+isbn (Texto, Único)
+genero (Texto)
+id_autor_fk (Entero, Clave Foránea ref. Autores) - Relación 1:N (Un autor tiene muchos libros)
+id_editorial_fk (Entero, Clave Foránea ref. Editoriales) - Relación 1:N (Una editorial publica muchos libros)
+
+Usuarios (La entidad de "cuenta" o "login")
+id_usuario (Entero, Clave Primaria)
+nombre_usuario (Texto, Único)
+email (Texto, Único)
+fecha_registro (Fecha)
+
+FichasUsuario (Implementa la relación 1:1)
+id_ficha (Entero, Clave Primaria)
+id_usuario_fk (Entero, Clave Foránea ref. Usuarios, Único) - Relación 1:1 (Un usuario tiene una sola ficha)
+nombre_real (Texto)
+apellido_real (Texto)
+direccion (Texto)
+telefono (Texto)
+
+Prestamos (Implementa la relación N:N)
+id_prestamo (Entero, Clave Primaria)
+id_libro_fk (Entero, Clave Foránea ref. Libros)
+id_usuario_fk (Entero, Clave Foránea ref. Usuarios)
+fecha_prestamo (Fecha)
+fecha_devolucion (Fecha, puede ser NULL si no se ha devuelto)
+
+Esta es la tabla puente para la relación N:N (Un usuario pide muchos libros; un libro es pedido por muchos usuarios).
+
+🚀 Tareas a realizar:
+Motor de base de datos:
+
+El ejercicio debe realizarse utilizando SQLite.
+
+Creación del Esquema (DDL): Correcta creación del esquema: Implementación correcta de las 6 tablas.
+Escribe las sentencias CREATE TABLE para las 6 tablas.
+Define correctamente las PRIMARY KEY y FOREIGN KEY.
+Reto 1:1: Asegúrate de implementar la relación 1:1 entre Usuarios y FichasUsuario usando la restricción UNIQUE en la clave foránea.
+Reto 1:N: Conecta Libros con Autores y Editoriales.
+Reto N:N: Configura Prestamos como la tabla puente.
+
+Inserción de Datos (DML):
+Inserta al menos 4 Autores.
+Inserta al menos 3 Editoriales.
+Inserta al menos 10 Libros (asegúrate de usar diferentes autores y editoriales).
+Inserta al menos 5 Usuarios.
+Inserta 5 FichasUsuario (una para cada usuario, conectada 1:1).
+Inserta al menos 15 Prestamos (mezcla usuarios y libros; deja algunos con fecha_devolucion en NULL).
+Implementación de Relaciones: Demostración exitosa de las relaciones 1:1, 1:N y N:N (uso de FK y UNIQUE).
+Integridad de Datos: Los datos insertados son coherentes y respetan las claves foráneas.
+
+
+📊 Criterios de evaluación:
+
+1.  **Motor de base de datos: SQLite.
+
+2.  **Creación de la base de datos:** Utilizar el lenguaje SQL para crear la base de datos y las tablas.
+
+3.  **Definición de campos:** Especificar el tipo de dato, las restricciones (clave primaria, clave foránea, NOT NULL, etc.) 
+    y cualquier otra propiedad relevante para cada campo.
+
+4.  **Inserción de datos de ejemplo:** Insertar al menos 15 registros en cada tabla para probar la base de datos.
+
+5.  Consultas: Realizar algunas consultas SQL para recuperar información de la base de datos:
+    a. Listar todos los libros de un autor específico.
+    b. Encontrar los libros prestados a un usuario (Cantidad).
+    c. Cuantos libros tiene un usuario en prestamo por genero.
+    d. Fecha de devolucion de los libros por usuario.
+    e. Agrupar libros por autor.
+    f. Agrupar Libros por genero.
+    g. Cuantos libros estan disponibles.
+    h. Cuantos libros estan disponibles por por autor y genero.
+    i. Listar el email del usuario y su direccion (requiere JOIN 1:1).
+    j. Listar todos los libros (título) escritos por un autor específico (ej: 'Isabel Allende') (requiere JOIN 1:N).
+    k. Listar todos los libros (título) publicados por una editorial específica (ej: 'Anagrama').
+    l. Listar los nombres de los usuarios (nombre_real) y los títulos de los libros que tienen actualmente en préstamo (donde fecha_devolucion es NULL) (requiere JOIN N:N).
+    m. Mostrar el historial de préstamos de un libro específico (ej: 'Cien años de soledad'), listando el nombre_usuario de quien lo pidió y las fechas.
+    n. Consulta Compleja: Listar el nombre real y el email de todos los usuarios que alguna vez han pedido un libro del género "Fantasía".
+
+
+**Criterios de evaluación:**
+
+* Correcta creación de la base de datos y las tablas.
+* Definición adecuada de los campos y sus tipos de datos.
+* Uso correcto de claves primarias y claves foráneas.
+* Inserción de datos válidos.
+* Ejecución correcta del script sql.
+* Entrega de un archivo de texto con los script SQL y la base de datos biblioteca.db
+
+**Recursos adicionales:**
+
+* Enlaces a la documentación oficial de PostgreSQL, MySQL y SQLite.
+
+
+-- PostgreSQL
+https://www.postgresql.org/docs/
+https://www.postgresql.org/download/
+https://www.pgadmin.org/download/
+
+
+-- MySQL
+
+https://www.mysql.com/downloads/
+https://dev.mysql.com/downloads/workbench/
+https://www.mysql.com/products/workbench/
+https://www.phpmyadmin.net/downloads/
+
+
+-- sqlite
+https://www.sqlite.org/docs.html
+https://www.sqlite.org/download.html
+https://www.sqlite.org/quickstart.html
+
+Gestor
+https://sqlitebrowser.org/
+https://dbeaver.io/
+
+
+-- SQL Server 
+https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+https://learn.microsoft.com/es-es/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall
+
+* Tutoriales y ejemplos de código SQL.
+
+① sqlzoo․net
+② sqlbolt․com
+③ datalemur․com
+④ sql-practice․com
+⑤ mystery․knightlab․com
+⑥ dataschool․com/learn-sql
+⑦ sql-easy․com/es (en Español)
+
+
+
+**Consejos:**
+
+* Utilizar nombres descriptivos para las tablas y los campos.
+* Prestar atención a los tipos de datos y las restricciones.
+* Probar la base de datos con diferentes consultas.
+

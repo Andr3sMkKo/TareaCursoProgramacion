@@ -1,0 +1,40 @@
+INSERT INTO Autores (nombre, apellido, nacionalidad) VALUES
+	(Miguel, de Cervantes, España),
+	(Antoine, de Saint-Exupéry, Francia),
+	(John Ronald , Reuel Tolkien, Britania),
+	(Gabriel, García Márquez, Colombia);
+	
+INSERT INTO Editoriales (nombre_editorial, ciudad_sede) VALUES
+	('Edicion DeBolsillo', 'Barcelona'),
+	('Editorial Minotauro', 'Barcelona'),
+	('Alianza Editorial', 'Madrid'),
+	('Editorial Verbum', 'Madrid'),
+	('Ediciones Cátedra', 'Madrid'),
+	('Penguin Random House', 'Nueva York');
+	
+INSERT INTO FichasUsuario (id_usuario_fk, nombre_real, apellido_real, direccion, telefono) VALUES
+	(1, 'Nicole', 'Martinez', 'Petare', '8321-848393213'),
+	(2, 'Isma', 'Torres', 'Chacao', '9321-384832847'),
+	(3, 'Pablo', 'Rodríguez', 'California', '1093-384999123'),
+	(4, 'Jose Alberto', 'Hernández', 'Propatria', '938-1823821834'),
+	(5, 'Carlos', 'Sierra', 'Plaza Venezuela', '91233-483821');
+	
+INSERT INTO Libros (titulo, isbn, genero, id_autor_fk, id_editorial_fk) VALUES
+	('Don Quijote de la Mancha', '978-8437601175', 'Novela', 1, 5),
+	('La Galatea', '978-84-376-1315-4', 'Novela Pastoril', 1, 5),
+	('Cien años de soledad', '978-84-9759-220-8', 'Novela', 4, 1),
+	('Crónica de una muerte anunciada', '978-8439711117', 'Narrativo', 4, 1),
+	('El Señor de los Anillos', '978-84-450-1853-8', 'Fantasía Epica', 3, 2),
+	('El Principito', '978-6073803762', 'Fábula', 2, 6),
+	('Vuelo Nocturno', '9788411489386', 'Novela de Aviación', 2, 3),
+	('Tierra de Hombres', '9788413376813', 'Narrativa autobiográfica', 2, 4);
+	
+INSERT INTO Usuarios (nombre_usuario, email, fecha_registro) VALUES
+	('l3ct0r', 'par788minotauro@gmail.com', '10-04-2014'),
+	('SpearShake', 'ismatorres@gmail.com', '08-08-2020'),
+	('xX_quijote_Xx', 'editorial56@gmail.com', '24-02-2009'),
+	('Alberto', 'josealberto@gmail.com', '18-11-2010'),
+	('Admin_56', 'dmin23@gmail.com', '01-07-2002');
+	
+INSERT INTO Prestamos(id_libro_fk, id_usuario_fk, fecha_prestamo, fecha_devolucion) VALUES
+	(
